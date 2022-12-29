@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.mapper.CustMapper">
+	<select id="select" parameterType="Integer" resultType="Cust">
+		select * from cust where cust_id=#{cust_id}
+	</select>
+	<select id="selectall" resultType="Cust">
+		select * from cust
+	</select>
+	<insert id="insert" parameterType="Cust">
+		insert into cust values(cust_id,#{user_id},#{pwd},#{name},#{tel},#{email},#{gender})
+	</insert>
+	<update id="update" parameterType="Cust">
+		update cust set user_id=#{user_id},pwd=#{pwd},name=#{name},tel=#{tel},email=#{email},gender=#{gender}
+		where cust_id = #{cust_id}
+	</update>
+	<delete id="delete" parameterType="Integer">
+		delete from cust where cust_id=#{cust_id}
+	</delete>
+</mapper>
