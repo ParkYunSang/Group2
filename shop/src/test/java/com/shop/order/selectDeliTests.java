@@ -1,5 +1,7 @@
 package com.shop.order;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -8,16 +10,18 @@ import com.shop.dto.Order;
 import com.shop.service.OrderService;
 
 @SpringBootTest
-class InsertTests {
+class selectDeliTests {
 	
 	@Autowired
 	OrderService service;
 	
 	@Test
 	void contextLoads() {
-		Order ord = new Order(0,103,15000,"서울","정슬기",100,"배송준비",4);
+		List<Order> ords;
 		try {
-			service.register(ord);
+			ords=service.searchdeli("배송완료");
+			for(Order ord:ords)
+				System.out.println(ord);
 			System.out.println("OK");
 		} catch (Exception e) {
 			System.out.println("Fail");

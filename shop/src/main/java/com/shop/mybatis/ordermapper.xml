@@ -19,6 +19,9 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		WHERE order_id = #{order_id}
 	</update>
 	<delete id="delete" parameterType="Integer">
-		DELETE FROM `order` where order_id=#{order_id}
+		DELETE FROM `order` WHERE order_id=#{order_id}
 	</delete>
+	<select id="searchDeli" parameterType="String" resultType="Order">
+		SELECT * FROM `order` WHERE delivery_status=#{deli}
+	</select>
 </mapper>
