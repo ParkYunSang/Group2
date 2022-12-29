@@ -20,7 +20,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		VALUES
 		(#{cart_id },
 		#{cust_id },
-		#{cnt: },
+		#{cnt },
 		sysdate(),
 		#{item_id })
 	</insert>

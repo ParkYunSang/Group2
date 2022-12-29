@@ -12,3 +12,4 @@ import com.shop.frame.MyMapper;
 public interface CartMapper extends MyMapper<Integer,Cart> {
 
 }
+
