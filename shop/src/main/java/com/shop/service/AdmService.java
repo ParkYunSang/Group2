@@ -44,3 +44,4 @@ public class AdmService implements MyService<String, Adm>{
 		return mapper.searchAdm(txt);
 	}
 }
+ 

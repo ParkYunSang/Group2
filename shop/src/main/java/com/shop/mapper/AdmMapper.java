@@ -13,3 +13,4 @@ import com.shop.frame.MyMapper;
 public interface AdmMapper extends MyMapper<String, Adm> {
 	public List<Adm> searchAdm(String txt) throws Exception;
 }
+ 
