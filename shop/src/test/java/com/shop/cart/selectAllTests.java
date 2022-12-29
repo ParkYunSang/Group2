@@ -1,5 +1,7 @@
 package com.shop.cart;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -8,16 +10,18 @@ import com.shop.dto.Cart;
 import com.shop.service.CartService;
 
 @SpringBootTest
-class InsertTests {
+class selectAllTests {
 	
 	@Autowired
 	CartService service;
 	
 	@Test
 	void contextLoads() {
-		Cart cart = new Cart(0,101,3,null,100);
+		List<Cart> carts;
 		try {
-			service.register(cart);
+			carts=service.get();
+			for(Cart cart:carts)
+				System.out.println(cart);
 			System.out.println("OK");
 		} catch (Exception e) {
 			System.out.println("Fail");

@@ -8,17 +8,18 @@ import com.shop.dto.Cart;
 import com.shop.service.CartService;
 
 @SpringBootTest
-class InsertTests {
+class selectTests {
 	
 	@Autowired
 	CartService service;
 	
 	@Test
 	void contextLoads() {
-		Cart cart = new Cart(0,101,3,null,100);
+		Cart cart;
 		try {
-			service.register(cart);
+			cart =service.get(101);
 			System.out.println("OK");
+			System.out.println(cart);
 		} catch (Exception e) {
 			System.out.println("Fail");
 			e.printStackTrace();
