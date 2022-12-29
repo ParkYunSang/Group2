@@ -19,8 +19,5 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	<delete id="delete" parameterType="Integer">
 		DELETE FROM item WHERE item_id=#{item_id}
 	</delete>
-	<select id="searchItem" parameterType="String" resultType="Item">
-		SELECT * FROM item WHERE item_name LIKE CONCAT('%',#{txt},'%')
-	</select>
 	
 </mapper>
