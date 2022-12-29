@@ -39,5 +39,6 @@ public class CartService implements MyService<Integer, Cart>{
 	@Override
 	public List<Cart> get() throws Exception {
 		return mapper.selectall();
+		
 	}
 }
