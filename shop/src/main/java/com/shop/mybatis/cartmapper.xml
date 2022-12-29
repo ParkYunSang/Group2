@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.mapper.CartMapper">
+	<select id="select" parameterType="Integer" resultType="Cart">
+		select *
+		from cart where cart_id=#{cart_id}
+	</select>
+	<select id="selectall" resultType="Cart">
+		select * from cart
+	</select>
+	<insert id="insert" parameterType="Cart">
+		INSERT INTO `team2db`.`cart`
+		(`cart_id`,
+		`cust_id`,
+		`cnt`,
+		`rdate`,
+		`item_id`)
+		VALUES
+		(#{cart_id },
+		#{cust_id },
+		#{cnt: },
+		sysdate(),
+		#{item_id })
+	</insert>
+	<update id="update" parameterType="Cart">
+		UPDATE `team2db`.`cart`
+		SET
+		`cust_id` = #{cust_id},
+		`item_id` = #{item_id },
+		`cnt` = #{cnt }
+		WHERE `cart_id` = #{cart_id}
+	</update>
+	<delete id="delete" parameterType="Integer">
+		DELETE FROM `team2db`.`cart`
+		WHERE `cart_id` = #{cart_id}
+	</delete>
+</mapper>
