@@ -19,4 +19,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	<delete id="delete" parameterType="String">
 		delete from adm where id=#{id}
 	</delete>
+	<select id="searchAdm" parameterType="String" resultType="Adm">
+		SELECT * FROM adm WHERE id LIKE CONCAT('%',#{txt},'%')
+	</select>
 </mapper>

@@ -39,4 +39,8 @@ public class AdmService implements MyService<String, Adm>{
 		return mapper.selectall();
 	}
 
+	// Search 
+	public List<Adm> searchAdm(String txt) throws Exception{
+		return mapper.searchAdm(txt);
+	}
 }
