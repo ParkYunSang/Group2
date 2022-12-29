@@ -11,10 +11,10 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		SELECT * FROM item
 	</select>
 	<insert id="insert" parameterType="Item">
-		INSERT INTO item VALUES(id,#{item_name},#{price},SYSDATE(),#{cnt})
+		INSERT INTO item VALUES(item_id,#{item_name},#{price},SYSDATE(),#{cnt})
 	</insert>
 	<update id="update" parameterType="Item">
-		UPDATE item SET item_name=#{item_name},price=#{price},cnt=#{cnt} WHERE id=#{id}
+		UPDATE item SET item_name=#{item_name},price=#{price},cnt=#{cnt} WHERE item_id=#{item_id}
 	</update>
 	<delete id="delete" parameterType="Integer">
 		DELETE FROM item WHERE item_id=#{item_id}
