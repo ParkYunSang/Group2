@@ -38,4 +38,8 @@ public class OrderService implements MyService<Integer,Order>{
 	public List<Order> get() throws Exception {
 		return mapper.selectall();
 	}
+	//Search
+	public List<Order> searchdeli(String deli) throws Exception{
+		return mapper.searchDeli(deli);
+	}
 }
